@@ -1,4 +1,4 @@
-$primaryColor: #1eb2a6;
+@import "./colors.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=MonteCarlo&family=Montserrat&family=Roboto:wght@100;400&display=swap");
 
@@ -6,13 +6,14 @@ $primaryColor: #1eb2a6;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f8f8f8;
 }
-
+/*------------global-----------*/
 .container {
   max-width: 85%;
   margin: auto;
@@ -30,14 +31,14 @@ body {
   border-radius: 50%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.3);
-  color: $primaryColor;
-  transition: 0.5s;
+  color: $kPrimary;
+  transition: 0.2s;
 }
 
 .icon:hover {
   cursor: pointer;
-  background-color:$primaryColor;
-  color: #fff;
+  background-color: $kPrimary;
+  color: $kWhite;
 }
 
 a {
@@ -48,30 +49,27 @@ li {
   list-style-type: none;
 }
 
-button {
-  border: none;
-}
-
-.raw {
+.row {
   width: 50%;
 }
 
 button {
   padding: 17px 30px;
-  background-color: #fff;
-  color: $primaryColor;
+  background-color: $kWhite;
+  color: $kPrimary;
   font-weight: 600;
   border: none;
   margin: 30px 10px 0 0;
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
 
-button,
-i {
-  margin-left: 20px;
+button {
+  i {
+    margin-left: 20px;
+  }
 }
 
 button:hover {
@@ -79,37 +77,36 @@ button:hover {
 }
 
 .primary-btn {
-  background-color: $primaryColor;
-  color: #fff;
+  background-color: $kPrimary;
+  color: $kWhite;
 }
 
+/*------------global-----------*/
 #heading {
   text-align: center;
   padding: 40px 0;
+
+  h3 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: $kPrimary;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 45px;
+    margin: 20px 0;
+    text-transform: capitalize;
+  }
 }
 
-#heading h3 {
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: $primaryColor;
-  text-transform: uppercase;
-}
-
-#heading h1 {
-  font-size: 45px;
-  margin: 20px 0;
-  text-transform: capitalize;
-}
-.aboutHome #heading h3, h1{
-  text-align: center;
-}
 p {
   line-height: 30px;
   font-size: 18px;
 }
 
 .back {
-  background-image: url("./assets/images/bk2.jpg");
+  background-image: url("../public/images/back.webp");
   background-size: cover;
   background-attachment: fixed;
   position: absolute;
@@ -120,21 +117,90 @@ p {
   height: 100vh;
   padding-top: 30%;
   padding-right: 50px;
-  color: #fff;
+  color: $kWhite;
   text-align: center;
+
+  h1 {
+    font-size: 100px;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
 }
 
-.back h1 {
-  font-size: 100px;
-  font-weight: 400;
+.margin {
+  margin-top: 40.3%;
 }
 
-.back h2 {
-  font-weight: 500;
-  font-size: 17px;
-  text-transform: uppercase;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
 }
 
-.margin{
-  margin-top: 40.3% ;
+.flex {
+  display: flex;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+}
+
+.padding {
+  padding: 80px 0;
+}
+
+.shadow {
+  box-shadow: 0 5px 25px -2px rgba(0, 0, 0, 0.5);
+  background-color: $kWhite;
+}
+
+.outline-btn {
+  margin: 0;
+  box-shadow: none;
+  border: 2px solid $kPrimary;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.outline-btn:hover {
+  background-color: $kPrimary;
+  color: $kWhite;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .back {
+    background-position: center;
+    padding-top: 50%;
+    height: 80vh;
+  }
+  .margin {
+    margin-top: 85%;
+  }
+
 }

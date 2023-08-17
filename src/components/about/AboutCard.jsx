@@ -1,5 +1,5 @@
 import React from "react"
-import BKImg1 from "../../assets/images/bk1.jpg"
+import BKImg1 from "../images/about.webp"
 import Title from "../common/title/Title"
 import {homeAbout} from "../../dummydata"
 import AWrapper from "./AWrapper"
@@ -35,6 +35,7 @@ const AboutCard = () => {
           </div>
         </div>
       </section>
+     
 			<AWrapper />
     </>
   );

@@ -3,7 +3,7 @@ import { awrapper } from '../../dummydata'
 const AWrapper = () => {
   return (
     <>
-      <selection className="awrapper">
+      <section className="awrapper">
         <div className="container grid">
             {awrapper.map((val)=>(
                 <div className="box flex">
@@ -17,9 +17,10 @@ const AWrapper = () => {
                 </div>
             ))}
         </div>
-      </selection>
+      </section>
     </>
   )
 }
 
 export default AWrapper
+ 

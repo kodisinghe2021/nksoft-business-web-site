@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "./Head";
-import "./header.css";
+import "./header.scss";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [click, setClick] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/course">All Courses</Link>
+              <Link to="/courses">All Courses</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
